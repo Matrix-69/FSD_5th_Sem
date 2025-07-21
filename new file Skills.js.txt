@@ -1,0 +1,37 @@
+new file Skills.js
+type rafc insted rcc
+and add h1
+
+for others its rcc and type h1
+
+Function Component:
+const Personal = () => {
+  return (
+    <div>
+      <h3> I am Single, Bachelor</h3>
+    </div>
+  )
+}
+
+export default Personal
+
+
+Class Component:
+export default class Qualification extends Component {
+  render() {
+    return (
+      <div>
+        <h1>I am doing my Bachelor of Technology in Computer Science, Specialization in Data Science</h1>
+      </div>
+    )
+  }
+}
+
+
+const name = "Indira";
+const [name, SetName] = useState('Indira')
+
+var name = "Indira";
+name = "Radhika";
+const [name, SetName] = useState('Indira')
+var [name, SetName] = SetName('Radhika')

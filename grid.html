@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grid Example</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+  
+    .grid-item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 1.2em;
+      text-align: center;
+      border-radius: 8px;
+    }
+  
+    /* Medium screens: switch to two columns */
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  
+    /* Small screens: one column layout */
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    @media (max-width: 400px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item">Left Sidebar</div>
+    <div class="grid-item">Main Content</div>
+    <div class="grid-item">Right Sidebar</div>
+    <div class="grid-item">Left Sidebar</div>
+    <div class="grid-item">Main Content</div>
+    <div class="grid-item">Right Sidebar</div>
+    <div class="grid-item">Left Sidebar</div>
+    <div class="grid-item">Main Content</div>
+    <div class="grid-item">Right Sidebar</div>
+    <div class="grid-item">Left Sidebar</div>
+    <div class="grid-item">Main Content</div>
+    <div class="grid-item">Right Sidebar</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.top{
+    width : 50% ;
+    height : 50%;
+    background-color: yellow;
+    border: black 2px soild ;
+    font-size: 100px;
+
+}
+.child{
+    width: 25%;
+    height : 10%;
+    background-color: aqua;
+
+}
+.child1{
+    width: 25%;
+    height : 10%;
+    background-color: red;
+}
