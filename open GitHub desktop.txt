@@ -1,0 +1,10 @@
+open GitHub desktop
+push file
+open cmd of same folder
+	npm create vite myviteapp
+select react
+select javascript
+
+	cd myviteapp
+	npm install
+	code .
