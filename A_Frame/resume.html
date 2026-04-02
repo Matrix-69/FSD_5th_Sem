@@ -1,0 +1,133 @@
+<!--
+A-Frame VR Resume (index.html) — Elegant Card Layout Version
+Designed for a B.Tech student to upload on Glitch.
+
+Features:
+- Modern glassmorphic floating cards for About, Education, Skills, Projects, Contact
+- Enhanced lighting and ambient background gradient sky
+- Interactive hover animation and clickable links
+- Download Resume button and external profile links
+
+Instructions remain the same as before.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarun V — B.Tech VR Resume</title>
+
+  <!-- A-Frame CDN -->
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+  <!-- Clickable Component -->
+  <script>
+    AFRAME.registerComponent('open-link-on-click', {
+      schema: { type: 'string' },
+      init: function () {
+        var url = this.data;
+        this.el.addEventListener('click', function () {
+          if (!url) return;
+          window.open(url, '_blank');
+        });
+      }
+    });
+  </script>
+
+  <style>
+    html, body { height:100%; margin:0; font-family: 'Poppins', sans-serif; background:#0f172a; color:#fff; }
+    #ui { position: absolute; left: 16px; top: 16px; z-index: 10; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); padding:16px; border-radius:12px; max-width:340px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    #ui h1 { margin: 0 0 8px 0; font-size:18px; font-weight:700; color:#fff; }
+    #ui p { margin: 6px 0; font-size:13px; color:#dbeafe; }
+    #ui a { color:#3b82f6; text-decoration:none; font-weight:600; }
+    #ui .btn { display:inline-block; margin-top:8px; padding:8px 12px; background:#2563eb; color:#fff; border-radius:8px; text-decoration:none; transition:all 0.2s; }
+    #ui .btn:hover { background:#1e40af; }
+
+    a-scene { height:100vh; width:100vw; }
+  </style>
+</head>
+<body>
+
+<div id="ui">
+  <h1>Tarun V — B.Tech (Data Science)</h1>
+  <p>3rd Year Student | Focused on AI, ML & Software Development</p>
+  <p>Use mouse/touch to look around; WASD to move.</p>
+  <a id="resumeLink" class="btn" href="#" target="_blank">📄 Download Resume</a>
+  <p>Links: <a id="githubLink" href="#" target="_blank">GitHub</a> · <a id="linkedinLink" href="#" target="_blank">LinkedIn</a></p>
+</div>
+
+<script>
+  var RESUME_PDF_URL = '#';
+  document.getElementById('resumeLink').href = RESUME_PDF_URL;
+  document.getElementById('githubLink').href = 'https://github.com/your-username';
+  document.getElementById('linkedinLink').href = 'https://linkedin.com/in/your-profile';
+</script>
+
+<a-scene background="color: #0f172a" embedded>
+  <!-- Camera -->
+  <a-entity id="cameraRig" position="0 1.6 4">
+    <a-entity camera look-controls wasd-controls>
+      <a-entity cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .clickable" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02" material="shader: flat; color: #3b82f6; opacity:0.9"></a-entity>
+    </a-entity>
+  </a-entity>
+
+  <!-- Lighting -->
+  <a-entity light="type: ambient; intensity: 0.9; color: #fff"></a-entity>
+  <a-entity light="type: directional; intensity: 0.6" position="-1 2 2"></a-entity>
+
+  <!-- Background Gradient Sky -->
+  <a-sky color="#0f172a"></a-sky>
+
+  <!-- Floating Title -->
+  <a-entity position="0 2.3 -2">
+    <a-text value="Tarun V 23BTCE284" align="center" color="#93c5fd" width="5"></a-text>
+    <a-text value="B.Tech — Data Science (3rd Year)" align="center" color="#bae6fd" width="4.5" position="0 -0.4 0"></a-text>
+  </a-entity>
+
+  <!-- Function to create cards -->
+  <a-mixin id="cardBase" geometry="primitive: plane; width: 2.8; height: 1.4;" material="color: #ffffff; opacity: 0.12; side: double; transparent: true;" animation__hover="property: scale; dir: alternate; dur: 800; to: 1.05 1.05 1; startEvents: mouseenter; pauseEvents: mouseleave"></a-mixin>
+
+  <!-- ABOUT Card -->
+  <a-entity position="-3 1.2 -3" rotation="0 18 0">
+    <a-entity mixin="cardBase" class="clickable"></a-entity>
+    <a-text value="About" color="#60a5fa" width="2.4" position="0 0.55 0.01" align="center"></a-text>
+    <a-text value="Passionate B.Tech Data Science student with hands-on experience in Python, Machine Learning, and Web Development. Exploring AI-powered automation and data analytics." color="#e2e8f0" width="2.4" position="0 0 0.01" align="center" wrap-count="40"></a-text>
+  </a-entity>
+
+  <!-- EDUCATION Card -->
+  <a-entity position="0 1.2 -4.2">
+    <a-entity mixin="cardBase" class="clickable"></a-entity>
+    <a-text value="Education" color="#60a5fa" width="2.4" position="0 0.55 0.01" align="center"></a-text>
+    <a-text value="B.Tech in Data Science — Garden City University (2023 - 2027)" color="#e2e8f0" width="2.4" position="0 0 0.01" align="center" wrap-count="40"></a-text>
+  </a-entity>
+
+  <!-- SKILLS Card -->
+  <a-entity position="3 1.2 -3" rotation="0 -14 0">
+    <a-entity mixin="cardBase" class="clickable"></a-entity>
+    <a-text value="Skills" color="#60a5fa" width="2.4" position="0 0.55 0.01" align="center"></a-text>
+    <a-text value="Python, Pandas, NumPy, Scikit-learn, SQL, Matplotlib, Git, HTML/CSS, A-Frame VR" color="#e2e8f0" width="2.4" position="0 0 0.01" align="center" wrap-count="40"></a-text>
+  </a-entity>
+
+  <!-- PROJECTS Card -->
+  <a-entity position="-1.6 0.6 -1.5" rotation="0 25 0">
+    <a-entity mixin="cardBase" class="clickable" open-link-on-click="https://github.com/your-username"></a-entity>
+    <a-text value="Projects" color="#60a5fa" width="2.4" position="0 0.5 0.01" align="center"></a-text>
+    <a-text value="• ML-based Sentiment Analysis\n• Automated Backup Shell Script\n• Smart Traffic Data Visualization" color="#e2e8f0" width="2.4" position="0 -0.05 0.01" align="center" wrap-count="50"></a-text>
+  </a-entity>
+
+  <!-- CONTACT Card -->
+  <a-entity position="1.6 0.6 -1.5" rotation="0 -25 0">
+    <a-entity mixin="cardBase" class="clickable" open-link-on-click="mailto:tarunreddy5432@gmail.com"></a-entity>
+    <a-text value="Contact" color="#60a5fa" width="2.4" position="0 0.5 0.01" align="center"></a-text>
+    <a-text value="📧 tarunreddy5432@gmail.com\n📞 +91-8618093600" color="#e2e8f0" width="2.4" position="0 -0.05 0.01" align="center" wrap-count="50"></a-text>
+  </a-entity>
+
+  <!-- Floating Decorative Boxes -->
+  <a-box position="-4 1 -6" depth="0.4" height="0.8" width="0.8" color="#2563eb" opacity="0.6" animation="property: rotation; to:0 360 0; loop:true; dur:12000"></a-box>
+  <a-box position="4 1 -6" depth="0.4" height="0.8" width="0.8" color="#38bdf8" opacity="0.6" animation="property: rotation; to:0 360 0; loop:true; dur:10000"></a-box>
+
+</a-scene>
+
+</body>
+</html>

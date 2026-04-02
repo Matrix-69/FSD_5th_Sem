@@ -1,0 +1,87 @@
+package name: (server)
+version: (1.0.0)                                                                                                                                               
+description:                                                                                                                                                   
+entry point: (users.js)                                                                                                                                        
+test command:                                                                                                                                                  
+git repository:                                                                                                                                                
+keywords:                                                                                                                                                      
+author:                                                                                                                                                        
+license: (ISC)                                                                                                                                                 
+About to write to D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server\package.json:
+
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "users.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+Is this OK? (yes)
+
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+User registered successfully
+New User to be registeed
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+8306282496
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+8290729984
+Windows_NT
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+8309137408
+Windows_NT
+Reddy
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+File created successfully
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+File created successfully
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+
+
+Node.js v22.17.0
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+Error in reading file
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+File created successfully
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+File created successfully
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+Error in file creation
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+File created successfully
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+This is sample file
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> ^C
+
+
+Node.js v22.17.0
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> npm install nodemon
+
+added 29 packages, and audited 30 packages in 7s
+
+4 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+Node.js v22.17.0
+[nodemon] app crashed - waiting for file changes before starting...
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> npx nodemon server.js
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> npm install express
+
+added 65 packages, and audited 95 packages in 7s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js       
+Successfully listening to 3005
+PS D:\GCU\SEM - 5\FSD - Full Stack Development\FSD_5th_Sem\server> node server.js
+Successfully listening to 3005

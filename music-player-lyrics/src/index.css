@@ -1,0 +1,130 @@
+/* Root container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  min-height: 100vh;
+  border-radius: 12px;
+}
+
+/* App background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0a0a; /* Full page dark */
+  color: #e0e0e0;
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card container (for songs, playlists, etc.) */
+.card {
+  padding: 1.5em;
+  margin: 1em;
+  background: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+}
+.card:hover {
+  background: #2a2a2a;
+}
+
+/* Search bar */
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  outline: none;
+  background: #1a1a1a;
+  color: #fff;
+  width: 60%;
+  margin-right: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1db954; /* Spotify green */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+button:hover {
+  background-color: #1aa34a;
+}
+
+/* Song library grid */
+.song-library {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Song card inside grid */
+.song-card {
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+.song-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.song-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Lyrics section */
+.lyrics {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #1c1c1c;
+  border-radius: 12px;
+  color: #ccc;
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+}
+.lyrics h2 {
+  margin-bottom: 1rem;
+  color: #1db954;
+}
